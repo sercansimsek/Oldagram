@@ -83,6 +83,7 @@ body {
 	justify-content: center;
 	align-items: left;
 	gap: 10px;
+	box-sizing: border-box;
 	padding: 15px 10px;
 }
 .post-icons {
@@ -93,6 +94,12 @@ body {
 .post-icon {
 	width: 24px;
 	height: 24px;
+	cursor: pointer;
+}
+
+.post-icon:hover,
+.post-icon:focus {
+	scale: calc(1.25);
 }
 
 .post-like,
