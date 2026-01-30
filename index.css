@@ -75,7 +75,34 @@ body {
 	height: 375px;
 }
 
-.post {
-	padding: 0;
-	width: 100%;
+/* Post */
+
+.post-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	gap: 10px;
+	padding: 15px 10px;
+}
+.post-icons {
+	display: flex;
+	gap: 20px;
+}
+
+.post-icon {
+	width: 24px;
+	height: 24px;
+}
+
+.post-like,
+.post-commentar {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.post-comments {
+	display: flex;
+	gap: 5px;
+	font-size: 13px;
 }
