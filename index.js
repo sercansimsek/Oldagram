@@ -30,22 +30,11 @@ const posts = [
 ];
 
 const mainContent = document.querySelector(".main");
-const post = document.querySelector('.post');
-let likes = document.querySelector('post-like');
-
-console.log(likes.nodeValue);
-
-
-
-function increaseLike() {
-    return likes.value += 1;
-}
 
 function render() {
 	let listItems = "";
 	for (let i = 0; i < posts.length; i++) {
-        listItems += 
-        `
+		listItems += `
         <section class="main-person">
 				<img
 					src="${posts[i].avatar}"
@@ -81,10 +70,18 @@ function render() {
 					<span class="post-commentar">${posts[i].username}</span> <span class="post-comment">${posts[i].comment}</span>
 				</div>
 			</section>
-        `
-    }
+        `;
+	}
 
 	mainContent.innerHTML = listItems;
+
+	const postImages = document.querySelectorAll(".main-post");
+	postImages.forEach((img, index) => {
+		img.addEventListener("dblclick", function () {
+			posts[index].likes++;
+			render();
+		});
+	});
 }
 
 render();
